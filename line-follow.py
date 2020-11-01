@@ -109,6 +109,10 @@ def loop():
             GPIO.output(LP2,GPIO.HIGH)
             GPIO.output(RP1,GPIO.HIGH)
             GPIO.output(RP2,GPIO.LOW)
+            while line[1] == 0 or line[0] == 1:
+                Od, Ol, Or, line = sense()
+                time.sleep(0.1)
+            time.sleep(0.5)
         #if 001 right
         if line == (0,0,1):
             print('right')
@@ -116,6 +120,10 @@ def loop():
             GPIO.output(LP2,GPIO.LOW)
             GPIO.output(RP1,GPIO.LOW)
             GPIO.output(RP2,GPIO.HIGH)
+            while line[1] == 0 or line[2] == 1:
+                Od, Ol, Or, line = sense()
+                time.sleep(0.1)
+            time.sleep(0.5)
         #if 111 stop
         if line == (1,1,1):
             print('stop')
@@ -130,6 +138,10 @@ def loop():
             GPIO.output(LP2,GPIO.HIGH)
             GPIO.output(RP1,GPIO.HIGH)
             GPIO.output(RP2,GPIO.LOW)
+            while line[1] == 0 or line[0] == 1:
+                Od, Ol, Or, line = sense()
+                time.sleep(0.1)
+            time.sleep(0.5)
         #if 011 right
         if line == (0,1,1):
             print('right')
@@ -137,6 +149,10 @@ def loop():
             GPIO.output(LP2,GPIO.LOW)
             GPIO.output(RP1,GPIO.LOW)
             GPIO.output(RP2,GPIO.HIGH)
+            while line[1] == 0 or line[2] == 1:
+                Od, Ol, Or, line = sense()
+                time.sleep(0.1)
+            time.sleep(0.5)
         #wait
     time.sleep(0.1)
 def destroy():
